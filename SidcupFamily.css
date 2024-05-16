@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #fff;
+    font-family: "Montserrat";
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    /* perspective: 800px; */
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 9px;
+    background-color: #000;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: #95C11E;
+    border-radius: 20px;
+}
+
+*::selection{
+    background-color: #fff;
+    color: #95C11E;
+}
+
+#cursor {
+    height: 20px;
+    width: 20px;
+    background-color: #96BD2E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor-blur {
+    height: 400px;
+    width: 400px;
+    background-color: rgba(225, 255, 0, 0.404);
+    border-radius: 100%;
+    position: fixed;
+    filter: blur(130px);
+    z-index: 9;
+}
+
+#nav {
+    height: 130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 45px;
+    padding: 16px 123px;
+    position: fixed;
+    z-index: 999;
+}
+
+#nav img {
+    height: 74px;
+}
+
+#nav h4 {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#page1 {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 140px;
+    font-weight: 900;
+    width: 60%;
+    line-height: 7.8rem;
+    position: relative;
+    margin-top: 50px;
+}
+
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    color: black;
+    position: absolute;
+    top: -0.3rem;
+    left: -0.5rem;
+    -webkit-text-stroke: 0.3px #e5ff00;
+    text-shadow: -1px -1px 0 #e5ff00, 1px -1px 0 #e5ff00, -1px 1px 0 #e5ff00, 1px 1px 0 #e5ff00;
+    z-index: -1;
+}
+
+#page1 h2 {
+    font-size: 32px;
+    font-weight: 900;
+    margin-top: 28px;
+    margin-bottom: 15px;
+}
+
+#page1 p {
+    font-size: 20px;
+    font-weight: 400;
+    width: 50%;
+    line-height: 25px;
+}
+
+#page1 #arrow{
+    height: 175px;
+    width: 175px;
+    background-color: transparent;
+    border: 2px solid #95C11E;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: -3%;
+    bottom: 0;
+    transition: all ease 0.4s;
+}
+
+#page1 #arrow i{
+    font-size: 50px;
+}
+
+#page1 #arrow:hover{
+    scale: 0.4;
+    background-color: #95C11E;
+}
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller {
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 100px;
+}
+
+#scroller::-webkit-scrollbar {
+    display: none;
+}
+
+#scroller-in {
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#scroller h4 {
+    display: inline;
+    font-size: 7.5rem;
+    font-weight: 900;
+    margin-right: 25px;
+    transition: all linear 0.3s;
+    font-family: sans-serif;
+    color: black;
+    -webkit-text-stroke: 1px #fff;
+}
+
+#scroller h4:hover {
+    color: #9ad101;
+    -webkit-text-stroke: 1px #9ad101;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* ABOUT US */
+#about-us {
+    height: 55vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+#about-us img {
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    object-fit: cover;
+    margin: 60px;
+}
+
+#about-us h2 {
+    font-size: 3.1rem;
+    font-weight: 900;
+}
+
+#about-us-in {
+    text-align: center;
+    width: 49%;
+}
+
+#about-us p {
+    font-size: 1.2rem;
+    line-height: 37.6px;
+    margin: 35px 0px;
+}
+
+#cards-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    right: 130px;
+    margin: 55px 0;
+}
+
+#card {
+    height: 90%;
+    width: 26%;
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 10;
+}
+
+#card h4 {
+    position: absolute;
+    bottom: 125px;
+    /* padding: 0 30px; */
+    font-weight: 900;
+}
+
+#card h3 {
+    position: absolute;
+    bottom: 30px;
+    padding: 0 30px;
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 45px;
+}
+
+.card1 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-toptracer.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1);
+}
+
+.card2 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/hero-4.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C1024&ssl=1);
+}
+
+.card3 {
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-lessons.jpg?strip=all&lossy=1&sharp=1&fit=1024%2C682&ssl=1);
+}
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #A8D72B;
+    border-radius: 15px;
+    padding: 0 31px;
+    padding-top: 130px !important;
+    opacity: 0;
+    transition: all ease 0.4s;
+}
+
+#card:hover .overlay{
+    opacity: 1;
+}
+
+#card:hover{
+    transform: rotate3d(1, -1, 0, 20deg);
+}
+
+.overlay h2{
+    font-size: 2.6rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 52px;
+    color: black;
+}
+
+.overlay p{
+    font-size: 1.1rem;
+    color: black;
+    font-weight: 400;
+    line-height: 33px;
+    padding-top: 17px;
+}
+
+.overlay p:last-child{
+    font-size: 1.15rem;
+}
+
+#svg-cards{
+    background-image: url(https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/dots-white.svg);
+    height: 130px;
+    width: 200px;
+    position: relative;
+    bottom: 19rem;
+    left: 15rem;
+}
+
+#green-section{
+    height: 48vh;
+    width: 100%;
+    background: linear-gradient(12deg, #AADD22, #9ECC1F, #29A535);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#green-section h4{
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: black;
+    text-align: center;
+    width: 50%;
+    line-height: 50px;
+}
+
+#green-section img{
+    padding: 8px 20px;
+    height: 100%;
+    width: 13%;
+    object-fit: cover;
+}
+
+#page3{
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+#page3 img{
+    position: absolute;
+    height: 46px;
+}
+
+#page3 p{
+    font-size: 1.9rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    width: 60%;
+    line-height: 50px;
+}
+
+#page3 .inverted1{
+    left: 15%;
+    top: 15%;
+}
+
+#page3 .inverted2{
+    right: 15%;
+    bottom: 11%;
+}
+
+#page4{
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 10;
+    margin-top: 20px;
+    margin: 68px 0;
+}
+
+#page4>.elem{
+    height: 161px;
+    width: 405px;
+    overflow: hidden;
+    border-radius: 15px;
+    position: relative;
+}
+
+.elem>h3{
+    height: 100%;
+    width: 100%;
+    background-color: #A9DB22;
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 46px;
+    text-align: center;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 10;
+    transition: all ease 0.5s;
+}
+
+.elem:hover h3{
+    color: #fff;
+    background-color: transparent;
+}
+
+.elem img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+#page4>h1{
+    position: absolute;
+    font-size: 75.5px;
+    font-weight: 900;
+    top: -24.5%;
+    color: #000;
+    font-family: sans-serif;
+    -webkit-text-stroke: 1px #fff;
+}
+
+#footer{
+    height: 58vh;
+    width: 100%;
+    background: linear-gradient(0.59turn, #119F3A, #ACE022);
+}
+
+#footer #footer-svg>img{
+    position: absolute;
+    height: 403px;
+    width: 423px;
+    object-fit: cover;
+    padding: 32px 0;
+}
+
+#sub-footer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 95px 147px 30px 10px;
+}
+
+
+#footer #logo-icon .logo{
+    height: 113px;
+    width: 136px;
+}
+
+#footer .social-icon{
+    display: flex;
+    font-size: 35px;
+    gap: 7px;
+    margin-top: 35px;
+}
+
+#footer .ri-facebook-box-fill, .ri-instagram-fill{
+    color: #000;
+}
+
+#footer h3{
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: #000;
+    line-height: 49.7px;
+}
+
+#footer h5{
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 23.18px;
+    color: #000;
+}
+
+#footer span{
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 23.94px;
+    color: #000;
+}
+
+#footer h4{
+    font-size: 1.2rem;
+    font-weight: 900;
+    line-height: 26.6px;
+    color: #000;
+}
+
+
+#copyright{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px 100px 0 100px;
+}
+
+#copyright p{
+    color: #000;
+    font-size: 0.9rem;
+    font-weight: 500
+}
